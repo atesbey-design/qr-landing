@@ -9,9 +9,7 @@ const Play = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Check if window is defined (so if in the browser or in node.js).
-    if (typeof window !== "undefined") {
-      // add event listener to window for mousemove event
+    if (typeof window !== "undefined" && window) {
       const handleMouseMove = (e) => {
         setMousePosition({ x: e.clientX, y: e.clientY });
       };
