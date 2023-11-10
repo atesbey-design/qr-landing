@@ -3,11 +3,13 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import Animation from "../Animation/Animation";
 
+typeof window !== "undefined" && (window.global = window);
+
 const Play = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    //check if window is defined (so if in the browser or in node.js).
+    // Check if window is defined (so if in the browser or in node.js).
     if (typeof window !== "undefined") {
       // add event listener to window for mousemove event
       const handleMouseMove = (e) => {
