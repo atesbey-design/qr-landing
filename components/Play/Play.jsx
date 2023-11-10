@@ -23,11 +23,15 @@ const Play = () => {
   }, []);
 
   const calculateTransform = () => {
-    const dx = mousePosition.x - window.innerWidth / 2;
-    const dy = mousePosition.y - window.innerHeight / 2;
-    const angle = Math.atan2(dy, dx);
+    if (typeof window !== "undefined" && window) {
+      const dx = mousePosition.x - window.innerWidth / 2;
+      const dy = mousePosition.y - window.innerHeight / 2;
+      const angle = Math.atan2(dy, dx);
 
-    return `translate(-50%, -50%) rotate(${angle}rad)`;
+      return `translate(-50%, -50%) rotate(${angle}rad)`;
+    } else {
+      return `translate(-50%, -50%) rotate(0rad)`;
+    }
   };
 
   return (
