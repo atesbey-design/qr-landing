@@ -1,9 +1,31 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Animation from "../Animation/Animation";
 
 const Play = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  const calculateTransform = () => {
+    const dx = mousePosition.x - window.innerWidth / 2;
+    const dy = mousePosition.y - window.innerHeight / 2;
+    const angle = Math.atan2(dy, dx);
+
+    return `translate(-50%, -50%) rotate(${angle}rad)`;
+  };
+
   return (
     <div className="flex justify-center items-center flex-col">
       <h1 className="text-white text-5xl text-shadow font-bold font-lexend drop-shadow-[2px_2px_rgba(0,0,0,1)] my-10">
@@ -61,9 +83,16 @@ const Play = () => {
                 Connect with your wallet or Google account.
               </p>
             </div>
-            <div className="absolute -right-24 -top-24">
+            <div
+              style={{
+                position: "absolute",
+                right: "-200px",
+                top: "0",
+                transform: calculateTransform(),
+              }}
+            >
               <Image src="/images/image11.png" width={200} height={200} />
-            </div>{" "}
+            </div>
           </Animation>
         </div>
 

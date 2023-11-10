@@ -13,7 +13,7 @@ import Animation from "@/components/Animation/Animation";
 
 export default function Home() {
   return (
-    <div className="text-orange-2 w-full overflow-hidden">
+    <div className=" w-full overflow-hidden">
       <div
         style={{
           width: "100%",
@@ -65,7 +65,7 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="mt-[30vh]   w-auto">
+        <div className="mt-[40vh]   w-auto">
           <Animation>
             <Slider />
           </Animation>
@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="mt-[30vh]">
+        <div className="mt-[40vh]">
           <Animation>
             <Download />
           </Animation>
@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="mt-[30vh]">
+        <div className="mt-[40vh]">
           <Animation>
             {" "}
             <LeaderBoard />
@@ -105,13 +105,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <div className="mt-[20vh]">
           <Animation>
             <NFTs />
           </Animation>{" "}
         </div>
-      </section>
+      </section> */}
 
       <section>
         <div className="mt-[10vh]">
@@ -139,14 +139,6 @@ export default function Home() {
               <path
                 d="M 0 30  C 200 100 280 0 500 30 L 500 0 L 0 0 Z "
                 fill="#FF68B5"
-                // fill: none;
-                // stroke: #646464;
-                // stroke-width: 1px;
-                // stroke-dasharray: 2,2;
-                // stroke-linejoin: round;
-
-                // stroke="black"
-                // strokeWidth="1px"
               ></path>
             </svg>
           </div>
