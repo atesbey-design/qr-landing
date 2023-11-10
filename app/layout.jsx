@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>Q&R|Home</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/Q.png" />
       </head>
       <body
         className=" w-[100vw] min-h-screen px-5"
